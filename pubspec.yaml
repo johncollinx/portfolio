@@ -1,0 +1,47 @@
+name: portfolio_app
+description: A Flutter portfolio web app.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  # Added Google Fonts for enhanced web typography (Updated version)
+  google_fonts: ^6.2.1 
+  # 🔑 FIX: provider is used in production code, so it belongs here 
+  provider: ^6.1.1 
+  # 🔗 REQUIRED: Added for handling all external links (GitHub, CV, Project Links, etc.)
+  url_launcher: ^6.2.5 
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  # Removed provider from here as it's in dependencies
+
+flutter:
+  uses-material-design: true
+
+  # 💡 Important Note for Web Deployment: 
+  # If deployed to a subpath (e.g., GitHub Pages URL), you must build 
+  # with the base-href argument: flutter build web --base-href /repo-name/
+
+  assets:
+    - assets/images/
+    - assets/icons/
+  # ⚠️ REMINDER: Ensure the following assets exist in 'assets/images/' for your cards and profile:
+  # - cover.jpg (Profile)
+  # - hng_logo.jpeg (HNG Card)
+  # - dsa_cert_icon.png (DSA Qualification icon)
+  # - [Project Mockups]: ctranslate_mockup.jpg, todo_mockup.jpg, shuttle_cruz_mockup.jpg, wallpaper_selector_mockup.jpg
+
+  # Uncomment if you add custom fonts later
+  # fonts:
+  #   - family: Roboto
+  #     fonts:
+  #       - asset: assets/fonts/Roboto-Regular.ttf
